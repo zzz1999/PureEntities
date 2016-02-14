@@ -14,7 +14,7 @@ class ZombieVillager extends WalkingMonster{
     public $width = 0.72;
     public $height = 1.8;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.1;
     }
 
@@ -24,7 +24,7 @@ class ZombieVillager extends WalkingMonster{
         $this->setDamage([0, 3, 4, 6]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "ZombieVillager";
     }
 

@@ -7,7 +7,7 @@ use pocketmine\entity\Entity;
 use pocketmine\entity\Explosive;
 use pocketmine\event\entity\ExplosionPrimeEvent;
 use pocketmine\level\Explosion;
-use pocketmine\nbt\tag\IntTag;
+use pocketmine\nbt\tag\Int as IntTag;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\item\Item;
 
@@ -19,7 +19,7 @@ class Creeper extends WalkingMonster implements Explosive{
 
     private $bombTime = 0;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 0.9;
     }
 
@@ -36,7 +36,7 @@ class Creeper extends WalkingMonster implements Explosive{
         $this->namedtag->BombTime = new IntTag("BombTime", $this->bombTime);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Creeper";
     }
 

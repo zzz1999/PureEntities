@@ -10,10 +10,10 @@ use pocketmine\event\entity\ProjectileLaunchEvent;
 use pocketmine\item\Item;
 use pocketmine\entity\ProjectileSource;
 use pocketmine\level\sound\LaunchSound;
-use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
-use pocketmine\nbt\tag\FloatTag;
+use pocketmine\nbt\tag\Compound as CompoundTag;
+use pocketmine\nbt\tag\Double as DoubleTag;
+use pocketmine\nbt\tag\Enum as ListTag;
+use pocketmine\nbt\tag\Float as FloatTag;
 
 class Blaze extends FlyingMonster implements ProjectileSource{
     const NETWORK_ID = 43;
@@ -22,7 +22,7 @@ class Blaze extends FlyingMonster implements ProjectileSource{
     public $height = 1.8;
     public $gravity = 0.04;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.2;
     }
 
@@ -33,7 +33,7 @@ class Blaze extends FlyingMonster implements ProjectileSource{
         $this->setDamage([0, 0, 0, 0]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Blaze";
     }
 

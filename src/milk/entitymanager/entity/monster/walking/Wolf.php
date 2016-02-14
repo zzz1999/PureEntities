@@ -4,7 +4,7 @@ namespace milk\entitymanager\entity\monster\walking;
 
 use milk\entitymanager\entity\monster\WalkingMonster;
 use pocketmine\entity\Entity;
-use pocketmine\nbt\tag\IntTag;
+use pocketmine\nbt\tag\Int as IntTag;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\entity\Creature;
@@ -17,7 +17,7 @@ class Wolf extends WalkingMonster{
     public $width = 0.72;
     public $height = 0.9;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.2;
     }
 
@@ -38,15 +38,15 @@ class Wolf extends WalkingMonster{
         $this->namedtag->Angry = new IntTag("Angry", $this->angry);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Wolf";
     }
 
-    public function isAngry() : bool{
+    public function isAngry(){
         return $this->angry > 0;
     }
 
-    public function setAngry(int $val){
+    public function setAngry($val){
         $this->angry = $val;
     }
 
@@ -58,7 +58,7 @@ class Wolf extends WalkingMonster{
         }
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         return $this->isAngry() && parent::targetOption($creature, $distance);
     }
 

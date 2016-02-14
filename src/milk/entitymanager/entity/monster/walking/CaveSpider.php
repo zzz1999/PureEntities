@@ -14,7 +14,7 @@ class CaveSpider extends WalkingMonster{
     public $width = 0.9;
     public $height = 0.8;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.3;
     }
 
@@ -25,7 +25,7 @@ class CaveSpider extends WalkingMonster{
         $this->setDamage([0, 2, 3, 3]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "CaveSpider";
     }
 

@@ -43,10 +43,10 @@ use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\level\Location;
 use pocketmine\level\Position;
-use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
-use pocketmine\nbt\tag\FloatTag;
+use pocketmine\nbt\tag\Compound as CompoundTag;
+use pocketmine\nbt\tag\Double as DoubleTag;
+use pocketmine\nbt\tag\Enum as ListTag;
+use pocketmine\nbt\tag\Float as FloatTag;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
@@ -166,7 +166,7 @@ class EntityManager extends PluginBase implements Listener{
         }
     }
 
-    public function getData(string $key, $defaultValue){
+    public function getData($key, $defaultValue){
         $vars = explode(".", $key);
         $base = array_shift($vars);
         if(!isset(self::$data[$base])){
@@ -184,7 +184,7 @@ class EntityManager extends PluginBase implements Listener{
         return $base;
     }
 
-    public static function create($type, Position $source, ...$args) : Entity{
+    public static function create($type, Position $source, ...$args){
         $chunk = $source->getLevel()->getChunk($source->x >> 4, $source->z >> 4, true);
         if(!$chunk->isGenerated()){
             $chunk->setGenerated();

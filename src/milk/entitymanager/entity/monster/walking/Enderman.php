@@ -14,7 +14,7 @@ class Enderman extends WalkingMonster{
     public $width = 0.72;
     public $height = 2.8;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.21;
     }
 
@@ -24,7 +24,7 @@ class Enderman extends WalkingMonster{
         $this->setDamage([0, 4, 7, 10]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Enderman";
     }
 

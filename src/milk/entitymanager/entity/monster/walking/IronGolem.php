@@ -17,7 +17,7 @@ class IronGolem extends WalkingMonster{
     public $width = 1.9;
     public $height = 2.1;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 0.8;
     }
 
@@ -30,7 +30,7 @@ class IronGolem extends WalkingMonster{
         $this->setMinDamage([0, 7, 7, 7]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "IronGolem";
     }
 
@@ -44,7 +44,7 @@ class IronGolem extends WalkingMonster{
         }
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         if(!($creature instanceof Player)){
             return $creature->isAlive() && $distance <= 60;
         }

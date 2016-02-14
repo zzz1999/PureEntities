@@ -13,7 +13,7 @@ class MagmaCube extends JumpingMonster{
     public $width = 1.2;
     public $height = 1.2;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 0.8;
     }
 
@@ -24,7 +24,7 @@ class MagmaCube extends JumpingMonster{
         $this->setDamage([0, 3, 4, 6]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "MagmaCube";
     }
 

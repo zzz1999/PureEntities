@@ -13,11 +13,11 @@ class Rabbit extends WalkingAnimal{
     public $width = 0.4;
     public $height = 0.75;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.2;
     }
     
-    public function getName() : string{
+    public function getName(){
         return "Rabbit";
     }
 
@@ -27,7 +27,7 @@ class Rabbit extends WalkingAnimal{
         $this->setMaxHealth(3);
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         if($creature instanceof Player){
             return $creature->spawned && $creature->isAlive() && !$creature->closed && $creature->getInventory()->getItemInHand()->getId() == Item::SEEDS && $distance <= 49;
         }

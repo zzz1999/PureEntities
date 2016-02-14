@@ -10,7 +10,7 @@ use pocketmine\event\Timings;
 use pocketmine\level\Level;
 use pocketmine\math\Math;
 use pocketmine\math\Vector3;
-use pocketmine\nbt\tag\ByteTag;
+use pocketmine\nbt\tag\Byte as ByteTag;
 use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\Player;
 
@@ -27,44 +27,44 @@ abstract class BaseEntity extends Creature{
 
     public function __destruct(){}
 
-    public abstract function updateMove(int $tickDiff);
+    public abstract function updateMove($tickDiff);
 
-    public abstract function targetOption(Creature $creature, float $distance) : bool;
+    public abstract function targetOption(Creature $creature, $distance);
 
     public function getSaveId(){
         $class = new \ReflectionClass(get_class($this));
         return $class->getShortName();
     }
 
-    public function isMovement() : bool{
+    public function isMovement(){
         return $this->movement;
     }
 
-    public function isFriendly() : bool{
+    public function isFriendly(){
         return $this->friendly;
     }
 
-    public function isKnockback() : bool{
+    public function isKnockback(){
         return $this->attackTime > 0;
     }
 
-    public function isWallCheck() : bool{
+    public function isWallCheck(){
         return $this->wallcheck;
     }
 
-    public function setMovement(bool $value){
+    public function setMovement($value){
         $this->movement = $value;
     }
 
-    public function setFriendly(bool $bool){
+    public function setFriendly($bool){
         $this->friendly = $bool;
     }
 
-    public function setWallCheck(bool $value){
+    public function setWallCheck($value){
         $this->wallcheck = $value;
     }
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1;
     }
 
@@ -180,7 +180,7 @@ abstract class BaseEntity extends Creature{
         return $hasUpdate;
     }
 
-    public function move($dx, $dy, $dz) : bool{
+    public function move($dx, $dy, $dz){
         Timings::$entityMoveTimer->startTiming();
 
         $movX = $dx;

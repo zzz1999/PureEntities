@@ -12,7 +12,7 @@ use pocketmine\Player;
 
 abstract class FlyingAnimal extends FlyingEntity implements Animal{
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 0.7;
     }
 
@@ -24,7 +24,7 @@ abstract class FlyingAnimal extends FlyingEntity implements Animal{
         }
     }
 
-    public function isBaby() : bool{
+    public function isBaby(){
         return $this->getDataFlag(self::DATA_AGEABLE_FLAGS, self::DATA_FLAG_BABY);
     }
 

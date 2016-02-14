@@ -23,7 +23,7 @@ namespace milk\entitymanager\entity\projectile;
 
 use pocketmine\level\format\FullChunk;
 use pocketmine\level\particle\CriticalParticle;
-use pocketmine\nbt\tag\CompoundTag;
+use pocketmine\nbt\tag\Compound as CompoundTag;
 use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\Player;
 use pocketmine\entity\Projectile;
@@ -45,17 +45,17 @@ class FireBall extends Projectile{
     protected $isCritical;
     protected $canExplode = false;
 
-    public function __construct(FullChunk $chunk, CompoundTag $nbt, Entity $shootingEntity = null, bool $critical = false){
+    public function __construct(FullChunk $chunk, CompoundTag $nbt, Entity $shootingEntity = null, $critical = false){
         parent::__construct($chunk, $nbt, $shootingEntity);
 
         $this->isCritical = $critical;
     }
 
-    public function isExplode() : bool{
+    public function isExplode(){
         return $this->canExplode;
     }
 
-    public function setExplode(bool $bool){
+    public function setExplode($bool){
         $this->canExplode = $bool;
     }
 

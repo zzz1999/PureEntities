@@ -10,10 +10,10 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\ProjectileLaunchEvent;
 use pocketmine\item\Item;
 use pocketmine\level\sound\LaunchSound;
-use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
-use pocketmine\nbt\tag\FloatTag;
+use pocketmine\nbt\tag\Compound as CompoundTag;
+use pocketmine\nbt\tag\Double as DoubleTag;
+use pocketmine\nbt\tag\Enum as ListTag;
+use pocketmine\nbt\tag\Float as FloatTag;
 use pocketmine\Player;
 use pocketmine\entity\Creature;
 
@@ -29,11 +29,11 @@ class SnowGolem extends WalkingMonster implements ProjectileSource{
         $this->setFriendly(true);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "SnowGolem";
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         return !($creature instanceof Player) && $creature->isAlive() && $distance <= 60;
     }
 

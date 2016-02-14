@@ -15,7 +15,7 @@ class Pig extends WalkingAnimal implements Rideable{
     public $width = 1.45;
     public $height = 1.12;
 
-    public function getName() : string{
+    public function getName(){
         return "Pig";
     }
 
@@ -25,7 +25,7 @@ class Pig extends WalkingAnimal implements Rideable{
         $this->setMaxHealth(10);
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         if($creature instanceof Player){
             return $creature->spawned && $creature->isAlive() && !$creature->closed && $creature->getInventory()->getItemInHand()->getId() == Item::CARROT && $distance <= 49;
         }

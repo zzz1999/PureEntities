@@ -13,7 +13,7 @@ class Silverfish extends WalkingMonster{
     public $width = 0.4;
     public $height = 0.2;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.4;
     }
 
@@ -24,7 +24,7 @@ class Silverfish extends WalkingMonster{
         $this->setDamage([0, 1, 1, 1]);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Silverfish";
     }
 

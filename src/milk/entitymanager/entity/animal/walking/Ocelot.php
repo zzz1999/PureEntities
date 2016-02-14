@@ -13,7 +13,7 @@ class Ocelot extends WalkingAnimal{
     public $width = 0.72;
     public $height = 0.9;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 1.4;
     }
 
@@ -23,11 +23,11 @@ class Ocelot extends WalkingAnimal{
         $this->setMaxHealth(10);
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Ocelot";
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         if($creature instanceof Player){
             return $creature->spawned && $creature->isAlive() && !$creature->closed && $creature->getInventory()->getItemInHand()->getId() == Item::RAW_FISH && $distance <= 49;
         }

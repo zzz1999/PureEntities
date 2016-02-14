@@ -14,10 +14,10 @@ use pocketmine\item\Bow;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\level\sound\LaunchSound;
-use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\DoubleTag;
-use pocketmine\nbt\tag\ListTag;
-use pocketmine\nbt\tag\FloatTag;
+use pocketmine\nbt\tag\Compound as CompoundTag;
+use pocketmine\nbt\tag\Double as DoubleTag;
+use pocketmine\nbt\tag\Enum as ListTag;
+use pocketmine\nbt\tag\Float as FloatTag;
 use pocketmine\network\protocol\MobEquipmentPacket;
 use pocketmine\Player;
 
@@ -27,7 +27,7 @@ class Skeleton extends WalkingMonster implements ProjectileSource{
     public $width = 0.65;
     public $height = 1.8;
 
-    public function getName() : string{
+    public function getName(){
         return "Skeleton";
     }
 

@@ -14,11 +14,11 @@ class Slime extends JumpingMonster{
     public $width = 1.2;
     public $height = 1.2;
 
-    public function getSpeed() : float{
+    public function getSpeed(){
         return 0.8;
     }
 
-    public function getName() : string{
+    public function getName(){
         return "Slime";
     }
 
@@ -33,7 +33,7 @@ class Slime extends JumpingMonster{
         // TODO
     }
 
-    public function targetOption(Creature $creature, float $distance) : bool{
+    public function targetOption(Creature $creature, $distance){
         //TODO
         return false;
     }
