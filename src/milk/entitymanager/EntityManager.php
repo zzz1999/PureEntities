@@ -106,7 +106,8 @@ class EntityManager extends PluginBase implements Listener{
     }
 
     public function onEnable(){
-        $this->saveDefaultConfig();
+        @mkdir($this->getDataFolder());
+        $this->saveResource("config.yml", false);
         if($this->getConfig()->exists("spawn")){
             $this->saveResource("config.yml", true);
             $this->reloadConfig();
@@ -143,14 +144,13 @@ class EntityManager extends PluginBase implements Listener{
     }
 
     public function onDisable(){
-        $path = $this->getDataFolder();
-        $conf = new Config($path . "spawner.yml", Config::YAML);
-        $conf->setAll(self::$spawner);
-        $conf->save();
-
-        $conf2 = new Config($path . "drops.yml", Config::YAML);
+        $conf2 = new Config($this->getDataFolder() . "drops.yml", Config::YAML);
         $conf2->setAll(self::$drops);
         $conf2->save();
+
+        $conf = new Config($this->getDataFolder() . "spawner.yml", Config::YAML);
+        $conf->setAll(self::$spawner);
+        $conf->save();
         $this->getServer()->getLogger()->info(TextFormat::GOLD . "[EntityManager]Plugin has been disable");
     }
 
