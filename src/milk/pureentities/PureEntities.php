@@ -24,7 +24,7 @@ use milk\pureentities\entity\monster\walking\Wolf;
 use milk\pureentities\entity\monster\walking\Zombie;
 use milk\pureentities\entity\monster\walking\ZombieVillager;
 use milk\pureentities\entity\projectile\FireBall;
-use milk\pureentities\tile\Spawner;
+//use milk\pureentities\tile\Spawner;
 use pocketmine\block\Air;
 use pocketmine\entity\Entity;
 use pocketmine\event\block\BlockBreakEvent;
@@ -91,7 +91,7 @@ class PureEntities extends PluginBase implements Listener{
             }
         }
 
-        Tile::registerTile(Spawner::class);
+        //Tile::registerTile(Spawner::class);
 
         $this->getServer()->getLogger()->info(TextFormat::GOLD . "[PureEntities]All entities were registered");
     }
