@@ -133,7 +133,7 @@ class PureEntities extends PluginBase implements Listener{
         return Entity::createEntity($type, $chunk, $nbt, ...$args);
     }
 
-    public function PlayerInteractEvent(PlayerInteractEvent $ev){
+    /*public function PlayerInteractEvent(PlayerInteractEvent $ev){
         if($ev->getFace() == 255 || $ev->getAction() != PlayerInteractEvent::RIGHT_CLICK_BLOCK){
             return;
         }
@@ -160,9 +160,9 @@ class PureEntities extends PluginBase implements Listener{
                 new Spawner($block->getLevel()->getChunk((int) $block->x >> 4, (int) $block->z >> 4), $nbt);
             }
         }
-    }
+    }*/
 
-    public function BlockPlaceEvent(BlockPlaceEvent $ev){
+    /*public function BlockPlaceEvent(BlockPlaceEvent $ev){
         if($ev->isCancelled()){
             return;
         }
@@ -219,7 +219,7 @@ class PureEntities extends PluginBase implements Listener{
                 }
             }
         }
-    }
+    }*/
 
     public function BlockBreakEvent(BlockBreakEvent $ev){
         if($ev->isCancelled()){
@@ -233,7 +233,7 @@ class PureEntities extends PluginBase implements Listener{
                 or $block->getId() == Block::STONE_WALL
                 or $block->getId() == Block::STONE_BRICK
                 or $block->getId() == Block::STONE_BRICK_STAIRS
-            ) && ($block->level->getBlockLightAt((int) $block->x, (int) $block->y, (int) $block->z) < 12 and mt_rand(1, 5) < 2)
+            ) && ($block->level->getBlockLightAt((int) $block->x, (int) $block->y, (int) $block->z) < 12 and mt_rand(1, 50) < 2)
         ){
             $entity = PureEntities::create("Silverfish", $block);
             if($entity != null){
