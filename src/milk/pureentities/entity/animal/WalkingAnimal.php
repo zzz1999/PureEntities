@@ -28,7 +28,7 @@ abstract class WalkingAnimal extends WalkingEntity implements Animal{
         return $this->getDataFlag(self::DATA_AGEABLE_FLAGS, self::DATA_FLAG_BABY);
     }
 
-    public function entityBaseTick($tickDiff = 1){
+    public function entityBaseTick($tickDiff = 1,$EnchantL = 0){
         Timings::$timerEntityBaseTick->startTiming();
 
         $hasUpdate = parent::entityBaseTick($tickDiff);
